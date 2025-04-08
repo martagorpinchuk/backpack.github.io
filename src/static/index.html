@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backpack</title>
+
+    <link href="./css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <canvas class="webglView"></canvas>
+
+    <div class="ui">
+        <!-- Top button -->
+        <button id="seeInRealLife">See In Real Life</button>
+
+        <!-- Bottom controls -->
+        <div class="controls">
+          <div class="group">
+            <span>Body Color</span>
+            <hr>
+            <button class="body-color" data-color="brown">Brown</button>
+            <button class="body-color" data-color="black">Black</button>
+            <button class="body-color" data-color="blue">Blue</button>
+          </div>
+          <div class="group">
+            <span>Metal Color</span>
+            <hr>
+            <button class="metal-color" data-color="silver">Silver</button>
+            <button class="metal-color" data-color="gold">Gold</button>
+            <button class="metal-color" data-color="black">Black</button>
+          </div>
+          <div class="group">
+            <span>Material</span>
+            <hr>
+            <button class="material" data-type="leather">Leather</button>
+            <button class="material" data-type="fabric">Fabric</button>
+            <button class="material" data-type="denim">Denim</button>
+          </div>
+        </div>
+    </div>
+
+    <div id="ar-preview" style="display: none;" class="ar-modal">
+    <div class="ar-content">
+        <span class="close-btn">&times;</span>
+        <p>Scan the QR code with your phone. Within 1–3 seconds the AR function opens on your phone.</p>
+        <img id="ar-qr-code" src="" alt="AR QR Code" />
+    </div>
+    </div>
+
+    <model-viewer
+        src="https://yourdomain.com/path/to/backpack.glb"
+        ar
+        ar-modes="scene-viewer quick-look webxr"
+        camera-controls
+        auto-rotate
+        ios-src="https://yourdomain.com/path/to/backpack.usdz"
+        alt="Backpack in AR">
+    </model-viewer>
+
+    <!-- A-Frame (optional, if using A-Frame for easier setup) -->
+    <script src="https://apps.8thwall.com/xr.js"></script>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+
+    <script src="/scripts/vendor.bundle.js"></script>
+    <script src="/scripts/main.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/loaders/GLTFLoader.js"></script>
+
+</body>
+
+</html>
